@@ -536,7 +536,7 @@ var LineChartComponent = /** @class */ (function () {
             responsive: true,
             title: {
                 display: false,
-                text: 'History of Balance'
+                text: 'History of Change Balance'
             },
             scales: {
                 xAxes: [{
@@ -573,7 +573,7 @@ var LineChartComponent = /** @class */ (function () {
         var minDate = date_fns__WEBPACK_IMPORTED_MODULE_1__["subDays"](date_fns__WEBPACK_IMPORTED_MODULE_1__["format"](new Date(), 'YYYY.MM.DD'), delta);
         console.log(minDate); // check
         var newPoints = this._balanceData.filter(function (v) { return v.x > minDate; });
-        this.lineChartData = [{ data: newPoints.map(function (val) { return val.y; }), label: 'Balance', fill: false }]; // это новый уменьшенный массив для значений Y
+        this.lineChartData = [{ data: newPoints.map(function (val) { return val.y; }), label: 'Changed', fill: false }]; // это новый уменьшенный массив для значений Y
         setTimeout(function () {
             _this.lineChartLabels = newPoints.map(function (val) { return intl.format(val.x); }); // это новый уменьшенный массив для значений X
         }, 0);
